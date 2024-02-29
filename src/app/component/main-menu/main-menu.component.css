@@ -1,34 +1,42 @@
-#main_menu {
+#main_menu_header {
     display: flex;
     flex-direction: row;
 
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     justify-items: center;
+
+    width: 100%;
+    height: 100px;
 }
 
-#main_menu_center, #main_menu_left, #main_menu_right {
-    min-width: 30%;
-    height: 100vh;
+#logo, #title, #button_account {
+    width: 220px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#button_account {
+    max-width: 100%;
+    width: 100px;
+    margin-left: 100px;
+}
+
+#main_menu{
+    width: 100%;
+    height: 500px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-}
 
-#main_menu_center, #main_menu_left{
     justify-content: center;
     justify-items: flex-start;
     
-}
-
-#main_menu_right {
-    justify-content: flex-start;
-    
-}
-
-#button_account {
-    margin: 50px;
 }
 
 
