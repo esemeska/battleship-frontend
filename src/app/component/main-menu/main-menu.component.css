@@ -1,0 +1,37 @@
+#main_menu {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+#main_menu_center, #main_menu_left, #main_menu_right {
+    min-width: 30%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main_menu_center, #main_menu_left{
+    justify-content: center;
+    justify-items: flex-start;
+    
+}
+
+#main_menu_right {
+    justify-content: flex-start;
+    
+}
+
+#button_account {
+    margin: 50px;
+}
+
+
+#button_start_game, #button_rules {
+    margin: 5px;
+}
