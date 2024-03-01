@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ClientState } from '../modules/client-state.module';
+import { NavigationService } from './navigation.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { ClientState } from '../modules/client-state.module';
 export class ClientService {
   currentState: ClientState; 
 
-  constructor(){
+  constructor(private navigationService: NavigationService){
     this.currentState = ClientState.MAIN_MENU;
   }
 
@@ -17,5 +18,6 @@ export class ClientService {
 
   async setState(newState: ClientState): Promise<void> {
     this.currentState = newState;
+    this.navigationService.navigateTo(this.currentState);
   }
 }
