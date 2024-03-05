@@ -1,13 +1,13 @@
-<div>
-    <app-header></app-header>
+<app-header></app-header>
+<app-content>
+    <input [(ngModel)]="username" id="input_login" type="text">
+    <span id="filter">{{usernameFilter}}</span>
 
-    <div id="content">
-        <div id="login">
-            <input type="text">
-            <input type="password">
-            <button id="button_rules">Rules</button>
-        </div>
-    </div>
-</div>
+    <input [(ngModel)]="password" id="input_password" type="password">
+    <span id="filter">{{passwordFilter}}</span>
+
+    <button (click)="login()" id="button_login">LOGIN</button>
+</app-content>
+
 
   

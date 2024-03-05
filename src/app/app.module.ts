@@ -7,6 +7,9 @@ import { MainMenuComponent } from './component/main-menu/main-menu.component';
 import { ClientComponent } from './component/client/client.component';
 import { LoginComponent } from './component/login/login.component';
 import { HeaderComponent } from './component/header/header.component';
+import { ContentComponent } from './component/content/content.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,14 +17,18 @@ import { HeaderComponent } from './component/header/header.component';
     MainMenuComponent,
     ClientComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
