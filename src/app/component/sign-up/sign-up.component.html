@@ -1,0 +1,11 @@
+<app-header></app-header>
+<app-content>
+    <input [(ngModel)]="username" id="input_login" type="text">
+    <span id="filter">{{usernameFilter}}</span>
+
+    <input [(ngModel)]="password" id="input_password" type="password">
+    <span id="filter">{{passwordFilter}}</span>
+
+    <button (click)="sign_up()" id="button_register">REGISTER</button>
+    <button (click)="navigateToLogin()" id="button_to_register">LOGIN</button>
+</app-content>

@@ -10,6 +10,6 @@ import { ClientState } from '../../modules/client-state.module';
 export class MainMenuComponent {
   constructor(private clientService: ClientService) {}
   onAccountClick() {
-    this.clientService.setState(ClientState.LOGIN);
+    this.clientService.setState(ClientState.SIGN_IN);
   }
 }

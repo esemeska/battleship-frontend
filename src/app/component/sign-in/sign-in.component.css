@@ -6,10 +6,7 @@
 #filter {
     margin-bottom: 20px;
 }
-#button_login {
+#button_login, #button_to_register {
     font-size: 20px;
-}
-
-#button_start_game, #button_rules {
-    margin: 5px;
+    margin-bottom: 10px;
 }

@@ -7,5 +7,6 @@ export enum ClientState {
     MATCH_SUMMARY = 'MATCH_SUMMARY',
     SETTINGS = 'SETTINGS',
     ERROR = 'ERROR',
-    LOGIN = 'LOGIN',
+    SIGN_IN = 'SIGN_IN',
+    SIGN_UP = 'SIGN_UP'
 }

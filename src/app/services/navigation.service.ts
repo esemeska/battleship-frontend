@@ -12,7 +12,8 @@ type StateRoutes = {
 export class NavigationService {
   private stateRoutes: StateRoutes = {
     [ClientState.MAIN_MENU]: '/main-menu',
-    [ClientState.LOGIN]: '/login',
+    [ClientState.SIGN_IN]: '/sign-in',
+    [ClientState.SIGN_UP]: '/sign-up',
     [ClientState.SERVER_SELECTION]: '/server-selection',
     [ClientState.CONNECTING]: '',
     [ClientState.WAITING_FOR_MATCH]: '',
