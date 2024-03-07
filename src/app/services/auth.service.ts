@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 export class AuthData {
-  constructor(public username: string, public password: string){}
+  constructor(private username: string, private password: string) {}
+}
+
+export enum AuthInputType {
+  USERNAME = "USERNAME",
+  PASSWORD = "PASSWORD"
 }
 
 @Injectable({

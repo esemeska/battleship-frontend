@@ -1,12 +1,24 @@
-#input_login, #input_password{
+form {
+    display: flex;
+    flex-direction: column;
+    justify-items: baseline;
+}
+
+#input_username, #input_password{
     max-width: 100%;
     width: 200px;
     font-size: 20px;
+    margin-bottom: 10px;
 }
-#filter {
+
+.div_validate {
     margin-bottom: 20px;
 }
+
 #button_login, #button_to_register {
     font-size: 20px;
-    margin-bottom: 10px;
+}
+
+#register_tip {
+    margin-top: 30px;
 }

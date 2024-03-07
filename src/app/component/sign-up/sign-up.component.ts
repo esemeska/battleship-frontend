@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthData, AuthService } from '../../services/auth.service';
 import { ClientService } from '../../services/client.service';
 import { ClientState } from '../../modules/client-state.module';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,26 +10,25 @@ import { ClientState } from '../../modules/client-state.module';
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {
-  username: string = "";
-  password: string = "";
-  usernameFilter: string = "";
-  passwordFilter: string = "";
+  signUpForm: FormGroup;
 
-  constructor(private authService: AuthService, private clientService: ClientService) {}
+  constructor(private authService: AuthService, private clientService: ClientService) {
+    this.signUpForm = new FormGroup({
+      username: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)])
+    })
+  }
 
-  sign_up(): void {
-    const authData = new AuthData(this.username, this.password);
+  signUp(): void {
+    if (!this.signUpForm.valid) return;
+
+    const authData = new AuthData(this.signUpForm.value.username, this.signUpForm.value.password);
     this.authService.signUpRequest(authData).subscribe({
       next: (response) => {
         console.log('Register successful', response)
       },
       error: (error) => {
-        console.error('Registration failed', error);
-        if (error.status === 400 && error.error.error === 'Username already exists') {
-          this.usernameFilter = 'Username already taken. Please choose a different username.';
-        } else {
-          alert('An error occurred. Please try again later.');
-        }
+        console.log('Registration error', error);
       }
     })
   }

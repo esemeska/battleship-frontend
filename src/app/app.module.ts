@@ -8,7 +8,7 @@ import { ClientComponent } from './component/client/client.component';
 import { SignInComponent } from './component/sign-in/sign-in.component';
 import { HeaderComponent } from './component/header/header.component';
 import { ContentComponent } from './component/content/content.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 
@@ -26,7 +26,8 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration(),

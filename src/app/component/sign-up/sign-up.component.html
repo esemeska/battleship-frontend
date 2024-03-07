@@ -1,11 +1,17 @@
 <app-header></app-header>
 <app-content>
-    <input [(ngModel)]="username" id="input_login" type="text">
-    <span id="filter">{{usernameFilter}}</span>
+    <form [formGroup]="signUpForm" (submit)="signUp">
+        <input id="input_username" formControlName="username" placeholder="Username" type="text">
+        <div class="div_validate" *ngIf="signUpForm.controls['username'].getError('invalid')">Username is required</div>
+        <div class="div_validate" *ngIf="signUpForm.controls['username'].getError('minlength')">Username must be at least 3 characters long</div>
 
-    <input [(ngModel)]="password" id="input_password" type="password">
-    <span id="filter">{{passwordFilter}}</span>
+        <input id="input_password" formControlName="password" placeholder="Password" type="password">
+        <div class="div_validate" *ngIf="signUpForm.controls['password'].getError('invalid')">Password is required</div>
+        <div class="div_validate" *ngIf="signUpForm.controls['password'].getError('minlength')">Password must be at least 6 characters long</div>
 
-    <button (click)="sign_up()" id="button_register">REGISTER</button>
-    <button (click)="navigateToLogin()" id="button_to_register">LOGIN</button>
+        <button id="button_register" (click)="signUp()" [disabled]="!signUpForm.valid">REGISTER</button>
+    </form>
+
+    <div id="register_tip">Already have an account?</div>
+    <button id="button_to_login" (click)="navigateToLogin()">LOGIN</button>
 </app-content>
